@@ -66,7 +66,7 @@ export const Footer = () => {
         
         <div class="flex flex-col items-center justify-between sm:flex-row">
             
-            <h2 className=' text-2xl font-medium lg:text-3xl  '>Travel Vista</h2>
+            <h2 className=' text-2xl font-bold italic lg:text-3xl  '>Travel Vista</h2>
             <p class="mt-4 text-sm text-gray-500 sm:mt-0 ">© Copyright 2024. All Rights Reserved By Travel Vista.</p>
         </div>
     </div>

@@ -16,7 +16,7 @@ const NavBar = () => {
   return (
     <div
     
-      className="z-50 bg-white fixed w-full  h-[75px] shadow lg:px-32 px-4  flex justify-between items-center"
+      className="z-50 bg-white fixed w-full  h-[73px] shadow lg:px-32 px-4  flex justify-between items-center"
     >
       <h2 className=" italic text-2xl sm:text-3xl font-extrabold text-gray-800  ">
         <Link to="/">Travel Vista</Link>

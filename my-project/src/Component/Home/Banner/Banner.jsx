@@ -5,9 +5,9 @@ export const Banner = () => {
     <div className="lg:px-32 px-4 lg:py-0 py-36 ">
       <div className="flex flex-col md:flex-row lg:gap-10 xl:gap-0 gap-16 lg:h-screen justify-between items-center">
         <div>
-          <h2 className=" text-xl  font-bold text-yellow-400 pb-4">Start Traveling Now 🌎</h2>
-          <h3 className=" text-3xl md:text-3xl lg:text-5xl xl:text-7xl font-bold text-gray-700">Explore the Top Destination of Planet Earth</h3>
-          <p className=" text-xl md:text-base lg:text-xl pt-7">Embrace the journey; Travel with passion and purpose.</p>
+          <h2 className=" text-xl  font-bold text-yellow-400 pb-4 italic">Start Traveling Now 🌎</h2>
+          <h3 className=" text-3xl md:text-3xl lg:text-5xl xl:text-6xl font-bold text-gray-700">Explore the Top Destination of Planet Earth</h3>
+          <p className=" text-xl md:text-base lg:text-xl pt-7 text-gray-600">Embrace the journey; Travel with passion and purpose.</p>
           <form></form>
         </div>
         <div className="flex flex-col lg:gap-0 md:gap-0 gap-10 md:pl-16 lg:pl-0 md:flex-row items-center">

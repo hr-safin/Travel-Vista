@@ -2,12 +2,11 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Error = () => {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate()
-
-    const handleHome = () => {
-        navigate(-1)
-    }
+  const handleHome = () => {
+    navigate(-1);
+  };
   return (
     <div>
       <section class="bg-white dark:bg-gray-900 ">
@@ -57,7 +56,10 @@ export const Error = () => {
                 <span onClick={handleHome}>Go back</span>
               </button>
 
-              <button onClick={handleHome} class="w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-orange-600 rounded-lg shrink-0 sm:w-auto hover:bg-blue-600 dark:hover:bg-[#faa935] dark:bg-[#faa935]">
+              <button
+                onClick={handleHome}
+                class="w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-orange-600 rounded-lg shrink-0 sm:w-auto hover:bg-blue-600 dark:hover:bg-[#faa935] dark:bg-[#faa935]"
+              >
                 Take me home
               </button>
             </div>

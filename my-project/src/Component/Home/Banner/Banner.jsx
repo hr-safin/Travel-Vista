@@ -13,7 +13,7 @@ export const Banner = () => {
         <div className="flex flex-col lg:gap-0 md:gap-0 gap-10 md:pl-16 lg:pl-0 md:flex-row items-center">
           <div>
             <img
-              className="md:w-[89%] lg:w-[85%] rounded-md md:h-[300px] lg:h-[400px] xl:h-[480px] object-cover md:rounded-br-full md:rounded-bl-full md:rounded-tl-full md:rounded-tr-full "
+              className="md:w-[80%] lg:w-[85%] rounded-md md:h-[300px] lg:h-[400px] xl:h-[480px] object-cover md:rounded-br-full md:rounded-bl-full md:rounded-tl-full md:rounded-tr-full "
               src="https://travel.nicdark.com/travel-agency-wordpress-theme/wp-content/uploads/sites/9/2023/05/i-parallax-15-1536x1024.jpeg"
               alt=""
             />

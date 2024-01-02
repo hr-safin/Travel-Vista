@@ -3,7 +3,7 @@ import { MdOutlineLocationOn } from "react-icons/md";
 export const Banner = () => {
   return (
     <div className=" md:px-6 lg:px-16 xl:px-32 px-4 lg:py-0 py-36 ">
-      <div className="flex flex-col md:flex-row lg:pt-10 xl-0  lg:gap-10 xl:gap-10 gap-16 md:gap-0 lg:h-screen justify-between items-center">
+      <div className="flex flex-col md:flex-row lg:pt-10 xl-0  lg:gap-10 xl:gap-10 gap-16 md:gap-0 lg:h-screen justify-between lg:items-center">
         <div className="lg:pt-24 xl-0">
           <h2 className=" text-xl  font-bold text-yellow-400 pb-4 italic">
             Start Traveling Now 🌎

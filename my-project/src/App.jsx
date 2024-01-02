@@ -5,6 +5,7 @@ import { Home } from "./Component/Home/Home";
 import { Error } from "./Error/Error";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import { useEffect, useState } from "react";
+import { About } from "./Component/About/About";
 function App() {
   const [isLoading, setLoading] = useState("turu");
 
@@ -24,6 +25,10 @@ function App() {
           path: "/",
           element: <Home />,
         },
+        {
+          path : "/about",
+          element : <About />
+        }
       ],
     },
   ]);

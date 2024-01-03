@@ -7,15 +7,15 @@ export const About = () => {
         <h2 className=" text-[#faa935]">About Us</h2>
       </div>
       <div className="flex flex-col-reverse lg:flex-row-reverse xl-0  lg:gap-10 xl:gap-10 gap-16 md:gap-0 lg:h-screen justify-between lg:items-center">
-        <div className="lg:pt-24 xl:pt-0  lg:text-end md:pt-16">
+        <div className="lg:pt-24 xl:pt-0   md:pt-16">
           <h2 className=" text-xl  font-bold text-yellow-400 pb-4 italic">
             Explore the world with us, one adventure at a time.
           </h2>
           <h3 className=" text-4xl w-[400px] md:w-[500px] md:mx-auto lg:mx-0 lg:w-full md:text-4xl lg:text-4xl xl:text-5xl font-bold text-gray-700">
             The perfect vacation come true with our Travel Agency
           </h3>
-          <div className="lg:text-end">
-          <p className=" text-base w-[400px] md:w-[480px] lg:w-[560px] lg:text-end mx-auto md:text-base lg:text-base pt-7 text-gray-600">
+          <div className="">
+          <p className=" text-base w-[400px] md:w-[480px] lg:w-[580px]  mx-auto md:text-base lg:text-base pt-7 text-gray-600">
             We are a team of experienced travel experts who specialize in
             planning and organizing unforgettable travel experiences for our
             clients with a wide range of travel services, including flight

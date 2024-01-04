@@ -7,7 +7,7 @@ export const AuthProvider = ({ children }) => {
 
   const auth = getAuth(app)
   const [user, setUser] = useState(null)
-
+  const [isLoading, setIsLoading] = useState("loading")
    
 
 

@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaStream } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 const NavBar = () => {
   const [nav, setNav] = useState(false);
   const [isOpen, setOpen] = useState(false);
-
+  const {user} = useContext(AuthContext)
 
 
 

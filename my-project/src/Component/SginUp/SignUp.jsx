@@ -1,9 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
-    return (
-        <div>
+
+    const handleSignUp = (e) => {
+        e.preventDefault()
+        console.log("clicked")
+    }
+  return (
+    <div>
       <section class=" pt-10  w-full">
         <div class="flex flex-col items-center py-20 justify-center px-6  mx-auto md:h-screen lg:py-0 w-[100%] lg:w-[80%]">
           <div class="w-full bg-white rounded-lg shadow-md md:mt-0 sm:max-w-md xl:p-0  ">
@@ -11,48 +16,39 @@ const SignUp = () => {
               <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-3xl text-center ">
                 SignUp
               </h1>
-              <form
-                
-                class="space-y-4 md:space-y-4"
-              >
-               
-                  <div>
-                    <label
-                      for="name"
-                      class="block mb-2 text-sm font-medium text-gray-900 "
-                    >
-                      {" "}
-                      Name
-                    </label>
-                    <input
-                    
-                      type="text"
-                      name="name"
-                      id="name"
-                      class="outline-none border border-gray-300 text-gray-900 sm:text-sm  rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                      placeholder="john"
-                    />
-                    
-                  </div>
+              <form onClick={handleSignUp} class="space-y-4 md:space-y-4">
+                <div>
+                  <label
+                    for="name"
+                    class="block mb-2 text-sm font-medium text-gray-900 "
+                  >
+                    {" "}
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    class="outline-none border border-gray-300 text-gray-900 sm:text-sm  rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
+                    placeholder="john"
+                  />
+                </div>
 
-                  <div>
-                    <label
-                      for="email"
-                      class="block mb-2 text-sm font-medium text-gray-900 "
-                    >
-                      Email
-                    </label>
-                    <input
-                      
-                      type="email"
-                      name="email"
-                      id="email"
-                      class="outline-none border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                      placeholder="name@xxx.com"
-                    />
-                    
-                  </div>
-               
+                <div>
+                  <label
+                    for="email"
+                    class="block mb-2 text-sm font-medium text-gray-900 "
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="outline-none border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
+                    placeholder="name@xxx.com"
+                  />
+                </div>
 
                 <div>
                   <div></div>
@@ -63,19 +59,14 @@ const SignUp = () => {
                     Password
                   </label>
                   <input
-                    
                     type="password"
                     name="password"
                     id="password"
                     placeholder="••••••••"
                     class="outline-none border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                   />
-                  
-                  
-
-                  
                 </div>
-               
+
                 <div class="flex items-start">
                   <div class="flex items-center h-5">
                     <input
@@ -87,10 +78,7 @@ const SignUp = () => {
                     />
                   </div>
                   <div class="ml-3 text-sm">
-                    <label
-                      for="terms"
-                      class="font-light text-gray-700 "
-                    >
+                    <label for="terms" class="font-light text-gray-700 ">
                       I accept the{" "}
                       <a
                         class="font-medium text-primary-600 hover:underline "
@@ -108,7 +96,6 @@ const SignUp = () => {
                   Create Account
                 </button>
                 <div className=" space-y-2 lg:py-1">
-                  
                   <p class="text-sm font-light text-gray-700 ">
                     Already have an account?{" "}
                     <Link
@@ -125,7 +112,7 @@ const SignUp = () => {
         </div>
       </section>
     </div>
-    );
+  );
 };
 
 export default SignUp;

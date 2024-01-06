@@ -7,6 +7,7 @@ import ScaleLoader from "react-spinners/ScaleLoader";
 import { useEffect, useState } from "react";
 import { About } from "./Component/About/About";
 import Login from "./Component/Login/Login";
+import SignUp from "./Component/SginUp/SignUp";
 function App() {
   const [isLoading, setLoading] = useState("turu");
 
@@ -33,6 +34,10 @@ function App() {
         {
           path : "/login",
           element : <Login />
+        },
+        {
+          path : "/signUp",
+          element : <SignUp />
         }
       ],
     },

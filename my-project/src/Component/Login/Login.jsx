@@ -38,7 +38,7 @@ const Login = () => {
               <h1 className="text-2xl text-center font-bold leading-tight tracking-tight pb-3 text-gray-900 md:text-3xl ">
                 Sign in
               </h1>
-              <form onClick={handleLogin} className="space-y-4 md:space-y-4">
+              <form onSubmit={handleLogin} className="space-y-4 md:space-y-4">
                 <div>
                   <label
                     for="email"

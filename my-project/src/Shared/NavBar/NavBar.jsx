@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaStream } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const NavBar = () => {
   const [nav, setNav] = useState(false);
   const [isOpen, setOpen] = useState(false);
@@ -19,18 +19,27 @@ const NavBar = () => {
       className="z-50 bg-white fixed w-full  h-[73px] shadow md:px-6 lg:px-16 xl:px-32 px-4  flex justify-between items-center"
     >
       <h2 className=" italic text-2xl sm:text-3xl font-extrabold text-gray-900  ">
-        <Link to="/">Travel Vista</Link>
+        <NavLink to="/">Travel Vista</NavLink>
       </h2>
 
       <ul className="hidden lg:flex tracking-wide text-gray-700 text-base  space-x-6 ">
-        <li className="pt-1 cursor-pointer hover:text-yellow-500">Home</li>
-        <li className="pt-1 cursor-pointer hover:text-yellow-500">About Us</li>
-        <li className="pt-1 cursor-pointer hover:text-yellow-500">Tour</li>
+        <li className="pt-1 cursor-pointer hover:text-yellow-500">
+          
+          <NavLink to="/">Home</NavLink>
+          </li>
+        <li className="pt-1 cursor-pointer hover:text-yellow-500">
+          
+          <NavLink to="/about">About Us</NavLink>
+          </li>
+        <li className="pt-1 cursor-pointer hover:text-yellow-500">
+          Tour
+          <NavLink to="/tour">Tour</NavLink>
+          </li>
 
         <li>
           <div className=" mt-1">
             <Link
-              
+              to="/login"
               class="relative cursor-pointer rounded-md border-2  border-[#faa935] py-2 px-4 font-medium before:border-2 before:border-[#faa935]  text-gray-700 transition-colors before:absolute before:left-0  before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-[#faa935] before:transition-transform before:duration-1000 before:content-[''] hover:text-white before:hover:scale-x-100"
             >
               Login
@@ -70,7 +79,10 @@ const NavBar = () => {
               </li>
 
               <li>
-                <div className=" mt-2 text-xl text-gray-800">Login</div>
+                <div className=" mt-2 text-xl text-gray-800">
+                  <Link to="/login">Login</Link>
+                  Login
+                  </div>
               </li>
             </ul>
           </div>

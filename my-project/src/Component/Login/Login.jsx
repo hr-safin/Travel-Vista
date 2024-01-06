@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
 
-    const {user, signIn} = useContext(AuthContext)
+    const {user, signIn,googleLogin} = useContext(AuthContext)
    const [error,setError] = useState("")
+   const navigate = useNavigate()
     const handleLogin = (e) => {
         e.preventDefault()
         const form = e.target
@@ -14,10 +15,19 @@ const Login = () => {
         
         setError("")
         signIn(email, password)
-        .then((user) => {
+        .then(result => {
             console.log(result.user)
         })
         .catch(error => console.log(error.message))
+    }
+
+    const handleGoogleLogin = () => {
+
+        googleLogin()
+        .then((result) => {
+            console.log(result.user)
+        })
+        .catch(error => console.log(error))
     }
   return (
     <div className="">
@@ -101,6 +111,7 @@ const Login = () => {
 
                 <div className=" space-y-1 lg:py-1">
                   <button
+                   onClick={handleGoogleLogin}
                     type="button"
                     className=" inline-flex w-full items-center justify-center rounded-md   text-gray-700  border-gray-400  px-3.5 py-2.5 font-semibold transition-all duration-200 bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black focus:outline-none"
                   >

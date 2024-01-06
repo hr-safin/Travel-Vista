@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { useForm } from "react-hook-form";
 
 const SignUp = () => {
+  const { user, createUser } = useContext(AuthContext);
+  const { register, handleSubmit, formState: { errors }, watch } = useForm();
 
-    const handleSignUp = (e) => {
-        e.preventDefault()
-        console.log("clicked")
-    }
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+ 
   return (
     <div>
       <section class=" pt-10  w-full">
@@ -16,7 +20,10 @@ const SignUp = () => {
               <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-3xl text-center ">
                 SignUp
               </h1>
-              <form onClick={handleSignUp} class="space-y-4 md:space-y-4">
+              <form
+                onClick={handleSubmit(onSubmit)}
+                class="space-y-4 md:space-y-4"
+              >
                 <div>
                   <label
                     for="name"
@@ -26,12 +33,16 @@ const SignUp = () => {
                     Name
                   </label>
                   <input
+                    {...register("name", { required: true })}
                     type="text"
                     name="name"
                     id="name"
                     class="outline-none border border-gray-300 text-gray-900 sm:text-sm  rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                     placeholder="john"
                   />
+                  {errors.name?.type === "required" && (
+                    <p className=" py-1 text-red-500">name is required</p>
+                  )}
                 </div>
 
                 <div>
@@ -42,16 +53,20 @@ const SignUp = () => {
                     Email
                   </label>
                   <input
+                    {...register("email", { required: true })}
                     type="email"
                     name="email"
                     id="email"
                     class="outline-none border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                     placeholder="name@xxx.com"
+                    
                   />
+                  {errors.email?.type === "required" && (
+                    <p className=" py-1 text-red-500">email is required</p>
+                  )}
                 </div>
 
                 <div>
-                  <div></div>
                   <label
                     for="password"
                     class="block mb-2 text-sm font-medium text-gray-900 "
@@ -59,12 +74,25 @@ const SignUp = () => {
                     Password
                   </label>
                   <input
+                    {...register("password",{
+                     required: true,
+                     minLength : 6,
+                     maxLength : 20,
+                     pattern : /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
+                    
+                    })}
                     type="password"
                     name="password"
                     id="password"
                     placeholder="••••••••"
                     class="outline-none border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                   />
+                  {errors.password?.type === "pattern" && (
+                    <p className=" text-red-500 pt-2">
+                      password must have one lower case one upper case one
+                      number and one special character{" "}
+                    </p>
+                  )}
                 </div>
 
                 <div class="flex items-start">
@@ -73,8 +101,8 @@ const SignUp = () => {
                       id="terms"
                       aria-describedby="terms"
                       type="checkbox"
-                      class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 "
-                      required
+                      class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800 "
+                      
                     />
                   </div>
                   <div class="ml-3 text-sm">

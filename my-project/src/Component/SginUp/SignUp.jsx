@@ -21,7 +21,7 @@ const SignUp = () => {
                 SignUp
               </h1>
               <form
-                onClick={handleSubmit(onSubmit)}
+                onSubmit={handleSubmit(onSubmit)}
                 class="space-y-4 md:space-y-4"
               >
                 <div>

@@ -21,7 +21,7 @@ const Popular = () => {
       });
   }, []);
   return (
-    <div className="md:px-6 lg:px-16 xl:px-32 px-4 lg:pt-8 lg:pb-32 py-4">
+    <div className="md:px-6 containers lg:px-16 xl:px-32 px-4 lg:pt-8 lg:pb-32 py-4">
       <div className=" flex justify-center items-center text-2xl  lg:text-4xl font-bold">
         <h2 className=" text-[#faa935] mb-16 lg:mb-20">Popular Destination</h2>
       </div>
@@ -50,12 +50,12 @@ const Popular = () => {
           <div key={tours.id} className="relative">
             <SwiperSlide>
             <img
-              className="object-cover rounded-lg brightness-75"
+              className="object-cover  rounded-lg brightness-75"
               src={tours.image}
               alt={tours.id}
             />
             <div className="  rounded-lg w-full h-full absolute top-0 left-0">
-              <p className=" left-4 bottom-4 text-white absolute text-4xl font-bold">
+              <p className=" left-0 right-0 text-center bottom-4 text-white absolute text-4xl font-bold">
                 {tours.name}
               </p>
             </div>

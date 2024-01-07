@@ -1,17 +1,27 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form";
+import { getAuth, updateProfile } from "firebase/auth";
+import { app } from "../../Firebase/firebase.config";
 
 const SignUp = () => {
   const { user, createUser } = useContext(AuthContext);
   const { register, handleSubmit, formState: { errors }, watch } = useForm();
+  const navigate = useNavigate()
+  const auth = getAuth(app)
 
   const onSubmit = (data) => {
     console.log(data);
     createUser(data.email, data.password)
     .then(result => {
         console.log(result.user)
+        updateProfile(auth.currentUser, {
+          displayName: data.name
+        })
+        .then(result =>{
+          navigate("/")
+        })
     })
     .catch(error => {
         console.log(error)

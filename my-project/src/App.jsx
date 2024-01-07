@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { About } from "./Component/About/About";
 import Login from "./Component/Login/Login";
 import SignUp from "./Component/SginUp/SignUp";
+import toast, { Toaster } from 'react-hot-toast';
 function App() {
   const [isLoading, setLoading] = useState("turu");
 
@@ -48,9 +49,12 @@ function App() {
     <ScaleLoader color="#faa935" />
     </div>
   ) : (
+    <>
     <AuthProvider>
       <RouterProvider router={router}></RouterProvider>
     </AuthProvider>
+    <Toaster />
+      </>
   );
 }
 

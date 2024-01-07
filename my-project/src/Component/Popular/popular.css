@@ -35,11 +35,7 @@ body {
   margin: 0 auto;
 }
 
-.heading {
-  padding: 1rem 0;
-  font-size: 3.5rem;
-  text-align: center;
-}
+
 
 .swiper_container {
   height: 52rem;
@@ -141,7 +137,7 @@ body {
 
 .swiper-pagination {
   position: relative;
-  width: 15rem !important;
+  width: 15rem ;
   bottom: 1rem;
   margin: auto;
 }

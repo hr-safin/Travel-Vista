@@ -2,7 +2,7 @@ import React from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 export const About = () => {
   return (
-    <div className=" md:px-6 lg:px-16 xl:px-32 px-4 lg:py-40 py-20 ">
+    <div className=" md:px-6 lg:px-16 xl:px-32 px-4 lg:py-40 py-4 ">
       <div className=" flex justify-center items-center text-2xl  lg:text-4xl font-bold">
         <h2 className=" text-[#faa935] mb-16 lg:-mb-16">About Us</h2>
       </div>
@@ -36,7 +36,7 @@ export const About = () => {
               alt=""
             />
           </div>
-          <div className="flex gap-6">
+          <div className="flex flex-col lg:flex-row gap-6">
             <img
               className=" md:w-[820px] lg:w-[260px]  rounded-md md:h-[200px] lg:h-[100px] xl:h-[190px] object-cover    "
               src="https://travel.nicdark.com/travel-agency-wordpress-theme/wp-content/uploads/sites/9/2023/05/i-parallax-07-destination-01.jpeg"

@@ -63,17 +63,17 @@ export const Banner = () => {
             </section>
           </form>
         </div>
-        <div className="flex flex-col lg:gap-0 md:gap-0 gap-10 md:pl-16 lg:pl-16 md:flex-row items-center">
-          <div>
+        <div className="flex  flex-col lg:gap-0 md:gap-0 gap-10 md:pl-16 lg:pl-16 md:flex-row items-center">
+          <div className="overflow-hidden">
             <img
-              className="md:w-[80%] lg:w-[85%] rounded-md md:h-[300px] lg:h-[400px] xl:h-[480px] object-cover md:rounded-br-full md:rounded-bl-full md:rounded-tl-full md:rounded-tr-full "
+              className="md:w-[80%] lg:w-[85%] rounded-md md:h-[300px] lg:h-[400px] xl:h-[480px] object-cover md:rounded-br-full md:rounded-bl-full  h-auto  cursor-pointer hover:scale-105  duration-500 ease-in-out  transform-gpu transition-all md:rounded-tl-full md:rounded-tr-full "
               src="https://travel.nicdark.com/travel-agency-wordpress-theme/wp-content/uploads/sites/9/2023/05/i-parallax-15-1536x1024.jpeg"
               alt=""
             />
           </div>
-          <div className=" md:pt-44">
+          <div className=" overflow-hidden md:pt-44">
             <img
-              className="md:w-[80%] lg:w-[85%] rounded-md md:h-[300px] lg:h-[400px] xl:h-[480px] object-cover md:rounded-br-full md:rounded-bl-full md:rounded-tl-full md:rounded-tr-full   "
+              className="md:w-[80%]  h-auto  cursor-pointer hover:scale-105  duration-500 ease-in-out  transform-gpu transition-all  lg:w-[85%] rounded-md md:h-[300px] lg:h-[400px] xl:h-[480px] object-cover md:rounded-br-full md:rounded-bl-full md:rounded-tl-full md:rounded-tr-full   "
               src="https://travel.nicdark.com/travel-agency-wordpress-theme/wp-content/uploads/sites/9/2023/05/i-parallax-20-1536x1024.jpeg"
               alt=""
             />

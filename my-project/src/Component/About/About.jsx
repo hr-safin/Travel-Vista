@@ -2,7 +2,7 @@ import React from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 export const About = () => {
   return (
-    <div className=" md:px-6 lg:px-16 xl:px-32 px-4 lg:py-40 py-4 ">
+    <div className=" md:px-6 lg:px-16 xl:px-32 px-4 lg:pt-40 py-4 ">
       <div className=" flex justify-center items-center text-2xl  lg:text-4xl font-bold">
         <h2 className=" text-[#faa935] mb-16 lg:-mb-16">About Us</h2>
       </div>

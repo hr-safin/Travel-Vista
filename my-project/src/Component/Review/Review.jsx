@@ -1,212 +1,232 @@
-import React, { useEffect } from "react";
-import Glide from "@glidejs/glide";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 const Review = () => {
-    useEffect(() => {
-        const slider = new Glide(".glide-05", {
-          type: "carousel",
-          focusAt: "center",
-          perView: 3,
-          autoplay: 4000,
-          animationDuration: 700,
-          gap: 24,
-          classNames: {
-            nav: {
-              active: "[&>*]:bg-wuiSlate-700",
-            },
-          },
-          breakpoints: {
-            1024: {
-              perView: 4,
-            },
-            640: {
-              perView: 1,
-            },
-          },
-        }).mount();
-    
-        return () => {
-          slider.destroy();
-        };
-      }, []);
   return (
     <div className=" md:px-6 lg:px-16 xl:px-32 px-4 lg:pt-0 lg:pb-32 py-4">
       <div className=" flex justify-center items-center text-2xl  lg:text-4xl font-bold">
-        <h2 className=" text-[#faa935] mb-16 lg:mb-20">Client Review</h2>
+        <h2 className=" text-[#faa935] mb-6">Client Review</h2>
       </div>
-      <div>
-         {/*<!-- Component: Carousel with indicators outside --> */}
-      <div className="glide-05 relative w-full bg-[#121212] px-6 lg:px-32">
-        {/*    <!-- Slides --> */}
-        <div className="overflow-hidden" data-glide-el="track">
-          <ul className="whitespace-no-wrap flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full overflow-hidden p-0">
-            <li className=" text-center rounded-lg lg:border lg:border-gray-800 p-5 ">
-              <h2 className=" text-gray-200 text-3xl text-center pb-4 font-bold ">
-                The Best Restaurant
-              </h2>
-              <p className=" text-gray-600">
-                The dining experience at Chef Restaurant is unparalleled. From
-                the moment you step in, the ambiance exudes elegance, and the
-                service is top-notch. The menu is a culinary journey, offering
-                an array of exquisite dishes that are both visually stunning and
-                delicious. Each bite is a revelation of flavors, expertly
-                crafted by their talented chefs. A must-visit for any food
-                enthusiast!
-              </p>
-
-              <div className=" border border-gray-900 mt-5 mb-5"></div>
-
-              <div className=" flex justify-center items-center gap-3">
-                <div>
+      <Swiper
+        slidesPerView={3}
+        spaceBetween={50}
+        freeMode={true}
+        autoplay={{
+          delay: 14500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper h-[300px] object-cover"
+      >
+        <SwiperSlide className="">
+          <section class="bg-white">
+            <div class=" px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+              <figure class="">
+                <svg
+                  class="h-8 mx-auto mb-3 text-gray-500 "
+                  viewBox="0 0 24 27"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <blockquote>
+                  <p class="text-base font-medium text-gray-900 ">
+                    TravelVista delivers seamless booking, superb customer service, and memorable vacations. Highly recommended for stress-free and enjoyable travel experiences..
+                  </p>
+                </blockquote>
+                <div className="flex justify-center pt-5 items-center gap-4">
                   <div className="avatar">
-                    <div className="w-12 rounded-full">
-                      <img src="https://tastyc.bslthemes.com/wp-content/uploads/2021/04/face-4.jpg" />
+                    <div className="w-8">
+                      <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D" />
                     </div>
                   </div>
+                  <p>|</p>
+                  <p> John Doe</p>
                 </div>
-                <div>
-                  <h2 className=" text-white">John Cena</h2>
-                </div>
-              </div>
-            </li>
-            <li className="  text-center  rounded-lg lg:border lg:border-gray-800 p-5">
-              <h2 className=" text-gray-200 text-3xl text-center pb-4 font-bold ">
-                Best In This City
-              </h2>
-              <p className=" text-gray-600">
-                Chef Restaurant is unequivocally the best in the city. From the
-                moment you enter, the atmosphere exudes elegance, and the
-                service is exceptional. The menu is a culinary masterpiece,
-                offering an array of dishes that are as visually stunning as
-                they are delicious. Each bite is an explosion of flavor, a
-                testament to the chef's expertise. A must-visit for all food
-                enthusiasts!
-              </p>
-
-              <div className=" border border-gray-900 mt-5 mb-5"></div>
-
-              <div className=" flex justify-center items-center gap-3">
-                <div>
+              </figure>
+            </div>
+          </section>
+        </SwiperSlide>
+        <SwiperSlide className="">
+          <section class="bg-white">
+            <div class=" px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+              <figure class="">
+                <svg
+                  class="h-8 mx-auto mb-3 text-gray-500 "
+                  viewBox="0 0 24 27"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <blockquote>
+                  <p class="text-base font-medium text-gray-900 ">
+                    TravelVista delivers seamless booking, superb customer service, and memorable vacations. Highly recommended for stress-free and enjoyable travel experiences..
+                  </p>
+                </blockquote>
+                <div className="flex justify-center pt-5 items-center gap-4">
                   <div className="avatar">
-                    <div className="w-12 rounded-full">
-                      <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D" />
+                    <div className="w-8">
+                      <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D" />
                     </div>
                   </div>
+                  <p>|</p>
+                  <p> John Doe</p>
                 </div>
-                <div>
-                  <h2 className=" text-white">Ben Stokes</h2>
-                </div>
-              </div>
-            </li>
-            <li className="  text-center  rounded-lg lg:border lg:border-gray-800 p-5">
-              <h2 className=" text-gray-200 text-3xl text-center pb-4 font-bold ">
-                It Was A Delicious Food
-              </h2>
-              <p className=" text-gray-600">
-                The food at Chef Restaurant is nothing short of extraordinary.
-                Each dish is a symphony of flavors, expertly crafted and
-                beautifully presented. From appetizers to desserts, every bite
-                is a delightful surprise. The culinary experience here is a
-                testament to the skill and passion of the chefs. A must-visit
-                for anyone who appreciates truly delicious food.
-              </p>
-
-              <div className=" border border-gray-900 mt-5 mb-5"></div>
-
-              <div className=" flex justify-center items-center gap-3">
-                <div>
+              </figure>
+            </div>
+          </section>
+        </SwiperSlide>
+        <SwiperSlide className="">
+          <section class="bg-white">
+            <div class=" px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+              <figure class="">
+                <svg
+                  class="h-8 mx-auto mb-3 text-gray-500 "
+                  viewBox="0 0 24 27"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <blockquote>
+                  <p class="text-base font-medium text-gray-900 ">
+                    TravelVista delivers seamless booking, superb customer service, and memorable vacations. Highly recommended for stress-free and enjoyable travel experiences..
+                  </p>
+                </blockquote>
+                <div className="flex justify-center pt-5 items-center gap-4">
                   <div className="avatar">
-                    <div className="w-12 rounded-full">
-                      <img src="https://tastyc.bslthemes.com/wp-content/uploads/2021/04/face-1.jpg" />
+                    <div className="w-8">
+                      <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D" />
                     </div>
                   </div>
+                  <p>|</p>
+                  <p> John Doe</p>
                 </div>
-                <div>
-                  <h2 className=" text-white">Emma Jonson</h2>
-                </div>
-              </div>
-            </li>
-            <li className="  text-center  rounded-lg lg:border lg:border-gray-800 p-5">
-              <h2 className=" text-gray-200 text-3xl text-center pb-4 font-bold ">
-                I Am Delighted
-              </h2>
-              <p className=" text-gray-600">
-                I am delighted to share my experience at Chef Restaurant. From
-                the moment I walked in, the ambiance exuded elegance, and the
-                attentive service enhanced my dining pleasure. The menu is a
-                culinary masterpiece, with visually stunning and delectable
-                dishes. Each bite was a revelation of flavors, expertly crafted
-                by the talented chefs. A must-visit for every food enthusiast.
-              </p>
-
-              <div className=" border border-gray-900 mt-5 mb-5"></div>
-
-              <div className=" flex justify-center items-center gap-3">
-                <div>
+              </figure>
+            </div>
+          </section>
+        </SwiperSlide>
+        <SwiperSlide className="">
+          <section class="bg-white">
+            <div class=" px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+              <figure class="">
+                <svg
+                  class="h-8 mx-auto mb-3 text-gray-500 "
+                  viewBox="0 0 24 27"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <blockquote>
+                  <p class="text-base font-medium text-gray-900 ">
+                    TravelVista delivers seamless booking, superb customer service, and memorable vacations. Highly recommended for stress-free and enjoyable travel experiences..
+                  </p>
+                </blockquote>
+                <div className="flex justify-center pt-5 items-center gap-4">
                   <div className="avatar">
-                    <div className="w-12 rounded-full">
-                      <img src="https://tastyc.bslthemes.com/wp-content/uploads/2021/04/face-2.jpg" />
+                    <div className="w-8">
+                      <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D" />
                     </div>
                   </div>
+                  <p>|</p>
+                  <p> John Doe</p>
                 </div>
-                <div>
-                  <h2 className=" text-white">Victoria Cova</h2>
-                </div>
-              </div>
-            </li>
-            <li className="  text-center  rounded-lg lg:border lg:border-gray-800 p-5">
-              <h2 className=" text-gray-200 text-3xl text-center pb-4 font-bold ">
-                I Will Visit Again
-              </h2>
-              <p className=" text-gray-600">
-                I will definitely visit Chef Restaurant again. My dining
-                experience was exceptional, from the elegant ambiance to the
-                top-notch service. The menu offered a delightful culinary
-                journey with visually stunning and delectable dishes. The
-                flavors were expertly crafted, leaving me eager to return. It's
-                a must-visit for anyone seeking an unforgettable dining
-                experience.
-              </p>
-
-              <div className=" border border-gray-900 mt-5 mb-5"></div>
-
-              <div className=" flex justify-center items-center gap-3">
-                <div>
+              </figure>
+            </div>
+          </section>
+        </SwiperSlide>
+        <SwiperSlide className="">
+          <section class="bg-white">
+            <div class=" px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+              <figure class="">
+                <svg
+                  class="h-8 mx-auto mb-3 text-gray-500 "
+                  viewBox="0 0 24 27"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <blockquote>
+                  <p class="text-base font-medium text-gray-900 ">
+                    TravelVista delivers seamless booking, superb customer service, and memorable vacations. Highly recommended for stress-free and enjoyable travel experiences..
+                  </p>
+                </blockquote>
+                <div className="flex justify-center pt-5 items-center gap-4">
                   <div className="avatar">
-                    <div className="w-12 rounded-full">
-                      <img src="https://tastyc.bslthemes.com/wp-content/uploads/2021/04/face-3.jpg" />
+                    <div className="w-8">
+                      <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D" />
                     </div>
                   </div>
+                  <p>|</p>
+                  <p> John Doe</p>
                 </div>
-                <div>
-                  <h2 className=" text-white">Paul Heymar</h2>
+              </figure>
+            </div>
+          </section>
+        </SwiperSlide>
+        <SwiperSlide className="">
+          <section class="bg-white">
+            <div class=" px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+              <figure class="">
+                <svg
+                  class="h-8 mx-auto mb-3 text-gray-500 "
+                  viewBox="0 0 24 27"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <blockquote>
+                  <p class="text-base font-medium text-gray-900 ">
+                    TravelVista delivers seamless booking, superb customer service, and memorable vacations. Highly recommended for stress-free and enjoyable travel experiences..
+                  </p>
+                </blockquote>
+                <div className="flex justify-center pt-5 items-center gap-4">
+                  <div className="avatar">
+                    <div className="w-8">
+                      <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D" />
+                    </div>
+                  </div>
+                  <p>|</p>
+                  <p> John Doe</p>
                 </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        {/*    <!-- Indicators --> */}
-        <div
-          className="flex w-full items-center justify-center gap-2"
-          data-glide-el="controls[nav]"
-        >
-          <button
-            className="group p-4"
-            data-glide-dir="=0"
-            aria-label="goto slide 1"
-          >
-            <span className="block h-2 w-2 rounded-full bg-yellow-700 ring-1 ring-slate-700 transition-colors duration-300 focus:outline-none"></span>
-          </button>
-          <button
-            className="group p-4"
-            data-glide-dir="=1"
-            aria-label="goto slide 2"
-          >
-            <span className="block h-2 w-2 rounded-full bg-yellow-700 ring-1 ring-slate-700 transition-colors duration-300 focus:outline-none"></span>
-          </button>
-        </div>
-      </div>
-      </div>
+              </figure>
+            </div>
+          </section>
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
 };

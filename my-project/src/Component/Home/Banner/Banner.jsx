@@ -1,8 +1,12 @@
 import React from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
+import { motion } from "framer-motion";
 export const Banner = () => {
   return (
-    <div className=" md:px-6 lg:px-16 xl:px-32 px-4 lg:py-0 py-36 ">
+    <div
+    
+      className=" md:px-6 lg:px-16 xl:px-32 px-4 lg:py-0 py-36 "
+    >
       <div className="flex flex-col md:flex-row lg:pt-10 xl-0  lg:gap-10 xl:gap-10 gap-16 md:gap-0 lg:h-screen justify-between lg:items-center">
         <div className="lg:pt-24 xl-0">
           <h2 className=" text-xl  font-bold text-yellow-400 pb-4 italic">
@@ -28,7 +32,9 @@ export const Banner = () => {
                       type="text"
                       class="block w-full relative px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  dark:text-gray-300 dark:border-gray-600 focus:border-yellow-500 focus:ring-yellow-500 focus:ring-opacity-40 dark:focus:border-yellow-500 focus:outline-none focus:ring"
                     />
-                    <span className="absolute right-2 font-bold text-lg top-11 bottom-0"><MdOutlineLocationOn /></span>
+                    <span className="absolute right-2 font-bold text-lg top-11 bottom-0">
+                      <MdOutlineLocationOn />
+                    </span>
                   </div>
 
                   <div>
